@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 700px;
+
+        }
+        
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .box{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border: 2px solid black;
+            height: 200px;
+            width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin: 20px;
+            border-radius: 50%;
+        }
+
+        #red{
+            background-color: red;
+        }
+        #yellow{
+            background-color: yellow;
+        }
+        #green{
+            background-color: green;
+        }
+
+        .btn{
+            width: 200px;
+            height: 50px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: blue;
+            color: white;
+            border-radius: 30px;
+            border: 5px solid black;
+            margin: 10px;
+        }
+
+        .btn:hover{
+            background-color: white;
+            color: black;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .button{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <div class="button">
+        <button class="btn" id="btn1">FadeOut</button>
+        <button class="btn" id="btn2">FadeIn</button>
+        <button class="btn" id="btn3">FadeToggle</button>
+    </div>
+    <div class="container">
+        <div class="box" id="red">Box-1</div>
+        <div class="box" id="yellow">Box-2</div>
+        <div class="box" id="green">Box-3</div>
+    </div>
+
+    <script src="jquery.js"></script>
+
+    <script>
+
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('#red').fadeOut(1000);
+                $('#yellow').fadeOut(2000);
+                $('#green').fadeOut(3000);
+            })
+
+            $('#btn2').click(function(){
+                $('#green').fadeIn(1000);
+                $('#yellow').fadeIn(2000);
+                $('#red').fadeIn(3000);
+            })
+
+            $('#btn3').click(function(){
+                $('#red').fadeToggle(1000);
+                $('#yellow').fadeToggle(2000);
+                $('#green').fadeToggle(3000);
+            })
+
+
+        });
+
+
+
+
+    </script>
+    
+</body>
+</html>

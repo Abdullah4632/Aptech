@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animate</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: solid black;
+            margin: auto;
+            height: 700px;
+            width: 1200px;
+
+        }
+
+        .animate{
+            padding: 10px 30px;
+            border: solid red;
+            background-color: rgba(255, 0, 0, 0.76);
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .container{
+            height: 200px;
+            width: 200px;
+            border: solid green;
+            background-color: rgba(0, 128, 0, 0.63);
+            margin-top: 20px;
+            border-radius: 20px;
+            position: relative;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="animate">Click to Animate</button>
+    <div class="container"></div>
+
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.animate').click(function(){
+                $('.container').animate({left:'100px'},2000);
+                $('.container').animate({top:'100px'},2000);
+                $('.container').animate({left:'0px'},2000);
+                $('.container').animate({top:'0px'},2000);
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* border: solid black; */
+            margin: auto;
+            height: 700px;
+        }
+
+        .btn{
+            padding: 10px 30px;
+            border: solid red;
+            background-color: rgba(255, 0, 0, 0.76);
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .panel{
+            height: 200px;
+            width: 200px;
+            border: solid green;
+            background-color: rgba(0, 128, 0, 0.63);
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="btn" id="btn1">SlideUp</button>
+        <button class="btn" id="btn2">SlideUp</button>
+        <button class="btn" id="btn3">Toggle Slide</button>
+    </div>
+
+    <div class="panel">
+    </div>
+
+    <script src="jquery.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#btn1').click(function(){
+                $('.panel').slideUp(2000);
+            });
+
+            $('#btn2').click(function(){
+                $('.panel').slideDown(2000, function(){
+                    alert('The Function is working')
+                });
+            });
+
+            $('#btn3').click(function(){
+                $('.panel').slideToggle(2000, function(){
+                    alert('Toggle Complete')
+                });
+            });
+        })
+    </script>
+</body>
+</html>
